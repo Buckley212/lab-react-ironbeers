@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const BeerDetails = ({ match }) => {
+const RandomBeer = () => {
     
     const [beer, setBeer] = useState({});
   
     useEffect(() => {
       axios
-        .get(`https://ih-beers-api2.herokuapp.com/beers/${match.params._id}`)
+        .get(`https://ih-beers-api2.herokuapp.com/beers/random`)
         .then((response) => setBeer(response.data))
     }, []);
 
@@ -32,4 +32,4 @@ const BeerDetails = ({ match }) => {
         </div>
       );
 }
-export default BeerDetails;
+export default RandomBeer;

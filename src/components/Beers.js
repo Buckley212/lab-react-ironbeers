@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import BeerDetails from './BeerDetails';
 
 
-const Beers = (props) => {
+const Beers = () => {
 
     const [beers, setBeers] = useState([])
 
