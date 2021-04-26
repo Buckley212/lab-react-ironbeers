@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function NewBeer() {
   const [info, setInfo] = useState({});
 
   function handleChange(e) {
-    let inputField = e.target.id;
-    let inputValue = e.target.value;
-    if (inputField == 'attenuation_level') {
-      inputValue = parseInt(inputValue);
+    if (e.target.id == 'attenuation_level') {
+      e.target.value = parseInt(e.target.value);
     }
-    setInfo({ ...info, [inputField]: inputValue });
+    setInfo({ ...info, [e.target.id]: e.target.value });
   }
 
   async function handleSubmit(e) {
@@ -78,9 +77,11 @@ function NewBeer() {
         ></input>
         <label htmlFor="contributed_by">Contributed By</label>
         <input type="text" id="contributed_by" onChange={handleChange}></input>
+        <Link to='/beers'>
         <button type="submit" form="newBeer">
           ADD NEW
         </button>
+        </Link>
       </form>
     </div>
   );
