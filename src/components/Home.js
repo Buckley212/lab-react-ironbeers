@@ -5,7 +5,6 @@ import randomBeer from '../assets/random-beer.png'
 import newBeer from '../assets/new-beer.png';
 
 
-
 const Home = () => {
     return (
         <div>
